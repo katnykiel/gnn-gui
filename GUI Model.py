@@ -9,7 +9,7 @@ import csv
 text_visualization = None  # Define text_visualization as a global variable
 
 from pymatgen.core import Lattice, Structure
-import matgl
+import matgl # library for stuff
 from matgl.ext.ase import Relaxer
 
 
