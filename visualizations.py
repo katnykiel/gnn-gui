@@ -124,9 +124,19 @@ def visualize_structure(structure):
         node_adjacencies.append(len(adjacencies[1]))
         node_text.append(list(G.nodes)[node])
 
+    # # Add the distance to the nearest neighbor to each node's text
+    # for node in G.nodes():
+    #     distances = []
+    #     for neighbor in G.neighbors(node):
+    #         distances.append(
+    #             structure.get_distance(node.split("-")[1], neighbor.split("-")[1])
+    #         )
+    #     node_text[
+    #         G.nodes[node]["id"]
+    #     ] += f"<br>Distance to nearest neighbor: {min(distances):.2f}"
+
     node_trace.text = node_text
 
-    # Create the final figure and display it
     fig = go.Figure(
         data=[edge_trace, node_trace],
         layout=go.Layout(
@@ -144,3 +154,6 @@ def visualize_structure(structure):
         ),
     )
     fig.show()
+
+
+visualize_structure(Structure.from_file("example_files/NaCl.cif"))
