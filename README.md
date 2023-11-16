@@ -61,3 +61,4 @@ Congratulations!
 
 - [ ] get stable, reproducible python env
 - [ ] structure paper
+- [X] set up on overleaf
