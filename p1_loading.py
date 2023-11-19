@@ -17,7 +17,7 @@ from ase.visualize.plot import plot_atoms
 from pymatgen.io.ase import AseAtomsAdaptor
 from pymatgen.io.cif import CifParser
 
-API_KEY = "sqYeL3B93wHlJpdauje7XxlySnwrf9Vx"
+API_KEY = "" # from file
 mp_id = "mp-749"
 
 # Another Conversion Method
