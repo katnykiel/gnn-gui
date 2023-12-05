@@ -1,5 +1,6 @@
 from pymatgen.core import Lattice, Structure
 import matgl
+import megnet.utils.models
 from matgl.ext.ase import Relaxer
 
 
@@ -15,7 +16,8 @@ def get_matgl_formation_energy_bulk_mod(structure):
     """
     # Load GNN model to predict formation energy
     pot = matgl.load_model("M3GNet-MP-2021.2.8-PES")
-
+    # Load MEGnet model to predict bulk modulus
+    bulk = megnet.utils.models.load_model("logK_MP_2018")
     
     # Relax structure with MatGL
     relaxer = Relaxer(potential=pot)
@@ -30,6 +32,6 @@ def get_matgl_formation_energy_bulk_mod(structure):
     eform = model.predict_structure(final_structure)
 
     # Predict bulk modulus of the relaxed structure
-    predicted_K = 10 ** model.predict_structure(final_structure).ravel()[0]
+    predicted_K = 10 ** bulk.predict_structure(final_structure).ravel()[0]
 
     return final_structure, final_energy, eform, predicted_K
