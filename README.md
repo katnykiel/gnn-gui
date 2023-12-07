@@ -43,22 +43,23 @@ Congratulations!
 ### GNNs (Satarupa)
 
 - [ ] connect GNNs other than MatGL (ALIGN, etc)
-- [ ] determine which properties we want to predict
+- [X] determine which properties we want to predict
 
 ### Inputs (Ethan)
 
-- [ ] let users upload crystal structures
-- [ ] let users query materials project
-- [ ] other crystal sources?
+- [X] let users query materials project
+- [ ] ensure vis is working
 
 ### Visualization (Kat)
 
 - [ ] add structure vis to GUI
 - [ ] add embedding vis to GUI
-- [ ] add neural network vis?
+- [X] add neural network vis?
 
 ### Other
 
-- [ ] get stable, reproducible python env
+- [X] get stable, reproducible python env
 - [ ] structure paper
+- [ ] Everyone update sections based on work they have completed
+- [ ] Presentation slides on work completed
 - [X] set up on overleaf
