@@ -32,7 +32,7 @@ def predict_properties():
             text_visualization.delete(1.0, tk.END)  # Clear the previous content
             text_visualization.insert(
                 tk.END,
-                f"The final relaxed structure is:\n{final_structure}\n\nThe final energy is {float(final_energy):.3f} eV.\n\nThe predicted formation energy for this structure is {float(eform.numpy()):.3f} eV/atom.\n\nThe predicted bulk modulus for this structure is {float(bulk_modulus.numpy()):.3f} Pa.",
+                f"The final relaxed structure is:\n{final_structure}\n\nThe final energy is {float(final_energy):.3f} eV.\n\nThe predicted formation energy for this structure is {float(eform.numpy()):.3f} eV/atom.\n\nThe predicted bulk modulus for this structure is {float(bulkmod.numpy()):.3f} Pa.",
             )
         except Exception as e:
             text_visualization.delete(1.0, tk.END) 
