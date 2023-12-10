@@ -27,12 +27,12 @@ def predict_properties():
         # structure object is now create when load button is pressed
         try:
             # Predict properties
-            final_structure, final_energy, eform = get_matgl_formation_energy(structure)
+            final_structure, final_energy, eform, bulkmod = get_matgl_formation_energy_bulk_mod(structure)
             # Update the "Visualization Area" with the results
             text_visualization.delete(1.0, tk.END)  # Clear the previous content
             text_visualization.insert(
                 tk.END,
-                f"The final relaxed structure is:\n{final_structure}\n\nThe final energy is {float(final_energy):.3f} eV.\n\nThe predicted formation energy for this structure is {float(eform.numpy()):.3f} eV/atom.",
+                f"The final relaxed structure is:\n{final_structure}\n\nThe final energy is {float(final_energy):.3f} eV.\n\nThe predicted formation energy for this structure is {float(eform.numpy()):.3f} eV/atom.\n\nThe predicted bulk modulus for this structure is {float(bulk_modulus.numpy()):.3f} Pa.",
             )
         except Exception as e:
             text_visualization.delete(1.0, tk.END) 
